@@ -100,7 +100,7 @@ while True:
         if direction in current_room.exits:
             current_room = current_room.get_exit(direction)
         else:
-            print('You can\'t go that way.')
+            print("You can't go that way.")
     
     # Handle item interaction commands
     elif command.startswith('get '):
@@ -110,29 +110,7 @@ while True:
             inventory.append(item)
             print(f'You picked up the {item}.')
         else:
-            print('That item is not in this room.')
-    elif command.startswith('use '):
-        item = command.split(' ')[1]
-        if item == 'flashlight':
-            if current_room == kitchen:
-                print('The flashlight reveals a key hidden under a pile of dirty dishes.')
-                kitchen.add_item('key')
-            else:
-                print('You don\'t see anything useful.')
-        elif item == 'knife':
-            if current_room == dining_room:
-                print('You use the knife to cut open the upholstery on the dining room chairs, but find nothing of interest.')
-            else:
-                print('You can\'t use that here.')
-        elif item == 'key':
-            if current_room == villain_room:
-                print('You use the key to unlock the door to the villain\'s room.')
-                villain_room.add_item('villain')
-            else:
-                print('You can\'t use that here.')
-        else:
-            print('You can\'t use that here.')
-    
+            print('That item is not in this room.')    
     # Handle other commands
     elif command == 'inventory':
         print('You are carrying:', inventory)
