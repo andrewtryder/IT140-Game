@@ -1,6 +1,3 @@
-import random
-
-# Define the rooms in the mansion
 class Room:
     def __init__(self, name, description):
         self.name = name
@@ -71,55 +68,59 @@ foyer.add_item("knife")
 kitchen.add_item("flashlight")
 secret_passage.add_item("key")
 
-# Set the starting room and initialize the game state
-current_room = start_room
-inventory = []
-
 # Define the game loop
-while True:
-    # Print the current room description and available exits
-    print(current_room)
-    print('Exits:', list(current_room.exits.keys()))
+def mainloop():
+    # Set the starting room and initialize the game state
+    current_room = start_room
+    inventory = []
+    # our big boy loop for the game.
+    while True:
+        # Print the current room description and available exits
+        print(current_room)
+        print('Exits:', list(current_room.exits.keys()))
 
-    # Check if the player has won or lost the game
-    if current_room == villain_room and set(inventory) == set(['key', 'flashlight', 'note', 'photograph', 'knife', 'diary']):
-        print('Congratulations, you solved the murder mystery and caught the villain!')
-        break
-    elif current_room == villain_room:
-        print('Game over. The villain caught you.')
-        break
+        # Check if the player has won or lost the game
+        if current_room == villain_room and set(inventory) == set(['key', 'flashlight', 'note', 'photograph', 'knife', 'diary']):
+            print('Congratulations, you solved the murder mystery and caught the villain!')
+            break
+        elif current_room == villain_room:
+            print('Game over. The villain caught you.')
+            break
 
-    # Prompt the player to enter a command
-    command = input('What do you want to do? ').lower()
+        # Prompt the player to enter a command
+        command = input('What do you want to do? ').lower()
 
-    # Handle movement commands
-    if command in current_room.exits:
-        current_room = current_room.get_exit(command)
-    elif command.startswith('go '):
-        direction = command.split(' ')[1]
-        if direction in current_room.exits:
-            current_room = current_room.get_exit(direction)
+        # Handle movement commands
+        if command in current_room.exits:
+            current_room = current_room.get_exit(command)
+        elif command.startswith('go '):
+            direction = command.split(' ')[1]
+            if direction in current_room.exits:
+                current_room = current_room.get_exit(direction)
+            else:
+                print("You can't go that way.")
+
+        # Handle item interaction commands
+        elif command.startswith('get '):
+            item = command.split(' ')[1]
+            if item in current_room.items:
+                current_room.remove_item(item)
+                inventory.append(item)
+                print(f'You picked up the {item}.')
+            else:
+                print('That item is not in this room.')
+        # Handle other commands
+        elif command == 'inventory':
+            print('You are carrying:', inventory)
+        elif command == 'help':
+            print(
+                'Commands: go [direction], get [item], use [item], inventory, help, quit')
+        elif command == 'quit':
+            print('Thanks for playing!')
+            break
         else:
-            print("You can't go that way.")
-    
-    # Handle item interaction commands
-    elif command.startswith('get '):
-        item = command.split(' ')[1]
-        if item in current_room.items:
-            current_room.remove_item(item)
-            inventory.append(item)
-            print(f'You picked up the {item}.')
-        else:
-            print('That item is not in this room.')    
-    # Handle other commands
-    elif command == 'inventory':
-        print('You are carrying:', inventory)
-    elif command == 'help':
-        print('Commands: go [direction], get [item], use [item], inventory, help, quit')
-    elif command == 'quit':
-        print('Thanks for playing!')
-        break
-    else:
-        print('Invalid command. Type "help" for a list of commands.')
+            print('Invalid command. Type "help" for a list of commands.')
 
+if __name__ == "__main__":
+    mainloop()
        
