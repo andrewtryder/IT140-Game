@@ -1,2 +1,3 @@
-[run]
-omit=TextBasedGame.py
+[report]
+include = test*.py
+omit = TextBasedGame.py
