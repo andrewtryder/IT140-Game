@@ -3,7 +3,7 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from game import Room
+from TextBasedGame import Room
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
