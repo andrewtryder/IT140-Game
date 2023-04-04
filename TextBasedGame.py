@@ -33,7 +33,6 @@ main_hall = Room("Main Hall", "You enter the main hall with doors in every direc
 library = Room("Library", "You enter a room filled with books. There are shelves lining the walls and a fireplace on the north wall.")
 study = Room("Study", "You enter a small room with a desk and a bookshelf. The walls are lined with portraits.")
 ballroom = Room("Ballroom", "You enter a grand ballroom with a chandelier hanging from the ceiling. The walls are lined with mirrors.")
-dining_room = Room("Dining Room", "You enter a room with a large dining table and chairs. The walls are lined with paintings.")
 kitchen = Room("Kitchen", "You enter a room with a stove, sink, and cabinets. There is a pile of dirty dishes in the sink.")
 secret_passage = Room("Secret Passage", "You enter a hidden passage. It's dark and you can't see very far ahead.")
 villain_room = Room("Villain's Room", "You enter a room with a large bed and a desk. The villain is standing in the corner.")
