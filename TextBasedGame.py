@@ -1,4 +1,28 @@
+"""
+TextBasedGame.py
+Andrew Ryder - IT140 - 2023
+"""
+
+# pylint: disable=C0301, C0103
 class Room:
+    """This is our Room class. It will be used to create room objects.
+    Each room object will have a name, description, list of items, and a dictionary of exits.
+
+    Attributes:
+        name (str): The name of the room.
+        description (str): A description of the room.
+        items (list): A list of items in the room.
+        exits (dict): A dictionary of exits from the room.
+        
+    Methods:    
+        add_exit(self, direction, room): Adds an exit to the room.
+        get_exit(self, direction): Returns the room object that is in the specified direction.
+        add_item(self, item): Adds an item to the room.
+        remove_item(self, item): Removes an item from the room.
+        move(self, direction): Moves the player to the room in the specified direction.
+        __str__(self): Returns a string representation of the room.
+        
+    """
     def __init__(self, name, description):
         self.name = name
         self.description = description
@@ -6,24 +30,53 @@ class Room:
         self.exits = {}
 
     def add_exit(self, direction, room):
+        """adds an exit to the room
+
+        Args:
+            direction (_type_): _description_
+            room (_type_): _description_
+        """
         self.exits[direction] = room
 
     def get_exit(self, direction):
+        """gets the room object that is in the specified direction
+
+        Args:
+            direction (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         return self.exits.get(direction)
 
     def add_item(self, item):
+        """
+        adds an item to the room
+        """
         self.items.append(item)
 
     def remove_item(self, item):
+        """
+        removes an item from the room
+        """
         self.items.remove(item)
 
     def move(self, direction):
+        """
+        moves the player to the room in the specified direction
+        """
         if direction in self.exits:
             return self.exits[direction]
         else:
             return None
 
     def __str__(self):
+        """
+        returns a string representation of the room
+
+        Returns:
+            _type_: _description_
+        """
         return self.name + '\n\n' + self.description
 
 # Create room objects
@@ -69,6 +122,8 @@ secret_passage.add_item("key")
 
 # Define the game loop
 def mainloop():
+    """This is the main game loop. It will run until the player wins or loses the game.
+    """
     # Set the starting room and initialize the game state
     current_room = start_room
     inventory = []
@@ -82,6 +137,7 @@ def mainloop():
         if current_room == villain_room and set(inventory) == set(['key', 'flashlight', 'note', 'photograph', 'knife', 'diary']):
             print('Congratulations, you solved the murder mystery and caught the villain!')
             break
+        # R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
         elif current_room == villain_room:
             print('Game over. The villain caught you.')
             break
@@ -122,4 +178,3 @@ def mainloop():
 
 if __name__ == "__main__":
     mainloop()
-       
