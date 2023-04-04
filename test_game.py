@@ -8,7 +8,8 @@ from TextBasedGame import Room
 # pylint: disable=C0301, C0103, W0612, W0613
 
 class TestRoom(unittest.TestCase):
-    """Unit tests for Room class
+    """
+    Unit tests for Room class
     """
     def setUp(self):
         self.start_room = Room("Start Room", "You are standing in a dusty old room. There is one door to the east.")
