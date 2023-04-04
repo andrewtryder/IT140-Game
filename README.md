@@ -1,7 +1,11 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/andrewtryder/IT140-Game/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/andrewtryder/IT140-Game/tree/master)
 
+[![Pylint](https://github.com/andrewtryder/IT140-Game/actions/workflows/pylint.yml/badge.svg)](https://github.com/andrewtryder/IT140-Game/actions/workflows/pylint.yml)
+
 # IT140-Game
 
 Text-based Python game for IT140 @ SNHU.
 
-I wanted to play with CircleCI, so I figured out how to write unit tests.
+I've never developed a game before. Part of our major milestone project is to create one, 
+so I used the opportunity to play around with OOP and learn a bit more about concepts
+in Python like testing and linting.
