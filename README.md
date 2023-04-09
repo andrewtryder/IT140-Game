@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/andrewtryder/IT140-Game/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/andrewtryder/IT140-Game/tree/master) [![Pylint](https://github.com/andrewtryder/IT140-Game/actions/workflows/pylint.yml/badge.svg)](https://github.com/andrewtryder/IT140-Game/actions/workflows/pylint.yml)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/andrewtryder/IT140-Game/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/andrewtryder/IT140-Game/tree/master) [![Pylint](https://github.com/andrewtryder/IT140-Game/actions/workflows/pylint.yml/badge.svg)](https://github.com/andrewtryder/IT140-Game/actions/workflows/pylint.yml) [![DeepSource](https://deepsource.io/gh/andrewtryder/IT140-Game.svg/?label=active+issues&show_trend=true&token=nWHcSisQGCt1wZWLJJyfvI9s)](https://deepsource.io/gh/andrewtryder/IT140-Game/?ref=repository-badge)
 
 # IT140-Game
 
