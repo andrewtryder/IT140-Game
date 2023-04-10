@@ -13,7 +13,17 @@ jobs:
         with: 
           fetch-depth: 50
           ref: ${{ github.event.pull_request.head.sha }}
-      
+          
+      - name: Setup Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.11
+          
+      - name: Generate Report
+        run: |
+          pip install coverage
+          coverage run -m unittest
+          
       - name: Add git safe.directory for container
         run: |
           mkdir -p /home/runner/work/_temp/_github_home
