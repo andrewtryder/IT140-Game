@@ -140,7 +140,7 @@ def mainloop():  # pragma: no cover
             print('Congratulations, you solved the murder mystery and caught the villain!')
             break
         # R1723: Unnecessary "elif" after "break"
-        elif current_room == villain_room:
+        if current_room == villain_room:
             print('Game over. The villain caught you.')
             break
 
