@@ -25,8 +25,7 @@ jobs:
 
       - name: Run coverage
         run: |
-          coverage run -m unittest
-          coverage report -m
+          coverage xml
 
       - name: Report test-coverage to DeepSource
         run: |
