@@ -14,7 +14,7 @@ class Room:
         items (list): A list of items in the room.
         exits (dict): A dictionary of exits from the room.
 
-    Methods:    
+    Methods:
         add_exit(self, direction, room): Adds an exit to the room.
         get_exit(self, direction): Returns the room object that is in the specified direction.
         add_item(self, item): Adds an item to the room.
@@ -137,7 +137,7 @@ def mainloop():  # pragma: no cover
         if current_room == villain_room and set(inventory) == set(['key', 'flashlight', 'note', 'photograph', 'knife', 'diary']):
             print('Congratulations, you solved the murder mystery and caught the villain!')
             break
-        # R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
+        # R1723: Unnecessary "elif" after "break"
         elif current_room == villain_room:
             print('Game over. The villain caught you.')
             break
