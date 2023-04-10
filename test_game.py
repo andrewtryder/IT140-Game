@@ -22,7 +22,8 @@ class TestRoom(unittest.TestCase):
     def test_move(self, mock_input, mock_output):
         """ Tests that the player can move to a room that exists
         """
-        next_room = self.start_room.move('east')
+        # next_room = self.start_room.move('east')
+        self.start_room.move('east')
         self.assertIn(mock_output.getvalue().strip(), "You move east to Foyer.")
 
     @patch('sys.stdout', new_callable=StringIO)
