@@ -13,7 +13,7 @@ class Room:
         description (str): A description of the room.
         items (list): A list of items in the room.
         exits (dict): A dictionary of exits from the room.
-        
+
     Methods:    
         add_exit(self, direction, room): Adds an exit to the room.
         get_exit(self, direction): Returns the room object that is in the specified direction.
@@ -21,7 +21,7 @@ class Room:
         remove_item(self, item): Removes an item from the room.
         move(self, direction): Moves the player to the room in the specified direction.
         __str__(self): Returns a string representation of the room.
-        
+
     """
     def __init__(self, name, description):
         self.name = name
