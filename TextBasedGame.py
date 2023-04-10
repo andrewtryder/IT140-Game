@@ -3,6 +3,7 @@ TextBasedGame.py
 Andrew Ryder - IT140 - 2023
 """
 
+
 # pylint: disable=C0301, C0103, R1705, R1723, R0912
 class Room:
     """This is our Room class. It will be used to create room objects.
@@ -120,7 +121,7 @@ foyer.add_item("knife")
 kitchen.add_item("flashlight")
 secret_passage.add_item("key")
 
-# Define the game loop
+
 def mainloop():  # pragma: no cover
     """This is the main game loop. It will run until the player wins or loses the game.
     """
