@@ -80,6 +80,7 @@ class Room:
         """
         return self.name + '\n\n' + self.description
 
+
 # Create room objects
 start_room = Room("Start Room", "You are standing in a dusty old room. There is one door to the east.")
 foyer = Room("Foyer", "You're in a nice enterance hall.")
@@ -176,6 +177,7 @@ def mainloop():  # pragma: no cover
             break
         else:
             print('Invalid command. Type "help" for a list of commands.')
+
 
 if __name__ == "__main__":
     mainloop()
