@@ -68,8 +68,9 @@ class Room:
         """
         if direction in self.exits:
             return self.exits[direction]
-        else:
-            return None
+        # should not need this?
+        #else:
+        #    return None
 
     def __str__(self):
         """
