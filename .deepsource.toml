@@ -3,6 +3,9 @@ version = 1
 test_patterns = ["tests/**"]
 
 [[analyzers]]
+name = "test-coverage"
+enabled = true
+
 name = "python"
 enabled = true
 dependency_file_paths = ["requirements.txt"]
