@@ -20,9 +20,8 @@ class TestRoom(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
     @patch('builtins.input', side_effect=['go east'])
     def test_move(self, mock_input, mock_output):
-        """ Tests that the player can move to a room that exists
+        """Tests that the player can move to a room that exists
         """
-        # next_room = self.start_room.move('east')
         self.start_room.move('east')
         self.assertIn(mock_output.getvalue().strip(), "You move east to Foyer.")
 
