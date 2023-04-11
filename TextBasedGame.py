@@ -6,7 +6,9 @@ Andrew Ryder - IT140 - 2023
 
 # pylint: disable=C0301, C0103, R1705, R1723, R0912
 class Room:
-    """This is our Room class. It will be used to create room objects.
+    """
+    
+    This is our Room class. It will be used to create room objects.
     Each room object will have a name, description, list of items, and a dictionary of exits.
 
     Attributes:

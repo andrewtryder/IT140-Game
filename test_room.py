@@ -5,6 +5,7 @@ from TextBasedGame import Room
 
 class TestRoom(unittest.TestCase):
     """
+    
     Unit tests for the Room class.
     """
     def setUp(self):
