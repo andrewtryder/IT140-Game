@@ -139,7 +139,7 @@ def mainloop():  # pragma: no cover
         if current_room == villain_room and set(inventory) == set(['key', 'flashlight', 'note', 'photograph', 'knife', 'diary']):
             print('Congratulations, you solved the murder mystery and caught the villain!')
             break
-        
+
         if current_room == villain_room:
             print('Game over. The villain caught you.')
             break
