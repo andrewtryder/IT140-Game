@@ -68,9 +68,8 @@ class Room:
         """
         if direction in self.exits:
             return self.exits[direction]
-        # should not need this?
-        #else:
-        #    return None
+        else:
+            return None
 
     def __str__(self):
         """
@@ -140,7 +139,7 @@ def mainloop():  # pragma: no cover
         if current_room == villain_room and set(inventory) == set(['key', 'flashlight', 'note', 'photograph', 'knife', 'diary']):
             print('Congratulations, you solved the murder mystery and caught the villain!')
             break
-        # R1723: Unnecessary "elif" after "break"
+        
         if current_room == villain_room:
             print('Game over. The villain caught you.')
             break
