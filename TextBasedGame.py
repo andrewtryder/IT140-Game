@@ -6,7 +6,7 @@ Andrew Ryder - IT140 - 2023
 
 # pylint: disable=C0301, C0103, R1705, R1723, R0912
 class Room:
-    """
+    """A class for creating rooms and objects in a text-based game.
 
     This is our Room class. It will be used to create room objects.
     Each room object will have a name, description, list of items, and a dictionary of exits.
@@ -33,40 +33,58 @@ class Room:
         self.exits = {}
 
     def add_exit(self, direction, room):
-        """adds an exit to the room
+        """Add an exit to the room in the specified direction.
 
         Args:
-            direction (_type_): _description_
-            room (_type_): _description_
+            direction (str): The direction to add the exit in. Must be one of: "north", "south", "east", or "west".
+            room (Room): The room object to add as an exit in the specified direction.
         """
         self.exits[direction] = room
 
     def get_exit(self, direction):
-        """gets the room object that is in the specified direction
+        """Get the room object that is in the specified direction.
 
         Args:
-            direction (_type_): _description_
+            direction (str): The direction to search for an exit in. Must be one of: "north", "south", "east", or "west".
 
         Returns:
-            _type_: _description_
+            Room or None: The room object in the specified direction, or None if no exit is found.
         """
         return self.exits.get(direction)
 
     def add_item(self, item):
         """
-        adds an item to the room
+        Remove an item from the room's inventory.
+
+        Args:
+            item (Item): The item to remove from the room's inventory.
+
+        Returns:
+            None.
         """
         self.items.append(item)
 
     def remove_item(self, item):
         """
-        removes an item from the room
+        Remove an item from the room's inventory.
+
+        Args:
+            item (Item): The item to remove from the room's inventory.
+
+        Returns:
+            None.
         """
         self.items.remove(item)
 
     def move(self, direction):
         """
-        moves the player to the room in the specified direction
+        Move the player to the room in the specified direction.
+
+        Args:
+            direction (str): The direction to move in. Must be one of: "north", "south", "east", or "west".
+
+        Returns:
+            Room or None: If the direction is valid and there is a room in that direction, returns the room object in that direction. Otherwise, returns None.
         """
         if direction in self.exits:
             return self.exits[direction]
