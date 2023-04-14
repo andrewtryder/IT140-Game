@@ -11,6 +11,7 @@ class TestRoom(unittest.TestCase):
     """Unit tests for Room class"""
 
     def setUp(self):
+        """Set up a room for testing."""
         self.start_room = Room("Start Room", "You are standing in a dusty old room. There is one door to the east.")
         self.foyer = Room("Foyer", "You're in a nice enterance hall.")
         self.start_room.add_exit("east", self.foyer)
