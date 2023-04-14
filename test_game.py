@@ -35,5 +35,6 @@ class TestRoom(unittest.TestCase):
         self.assertIsNone(next_room)
         self.assertIn(mock_output.getvalue().strip(), "There is no exit in that direction.")
 
+
 if __name__ == "__main__":
     unittest.main()
