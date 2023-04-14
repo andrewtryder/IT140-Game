@@ -8,9 +8,7 @@ from TextBasedGame import Room
 
 
 class TestRoom(unittest.TestCase):
-    """
-    Unit tests for Room class
-    """
+    """Unit tests for Room class"""
 
     def setUp(self):
         self.start_room = Room("Start Room", "You are standing in a dusty old room. There is one door to the east.")
