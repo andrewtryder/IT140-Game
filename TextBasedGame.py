@@ -7,7 +7,7 @@ Andrew Ryder - IT140 - 2023
 # pylint: disable=C0301, C0103, R1705, R1723, R0912
 class Room:
     """
-    
+
     This is our Room class. It will be used to create room objects.
     Each room object will have a name, description, list of items, and a dictionary of exits.
 
@@ -138,7 +138,7 @@ def mainloop():  # pragma: no cover
         print('Exits:', list(current_room.exits.keys()))
 
         # Check if the player has won or lost the game
-        if current_room == villain_room and set(inventory) == set(['key', 'flashlight', 'note', 'photograph', 'knife', 'diary']):
+        if current_room == villain_room and set(inventory) == {'key', 'flashlight', 'note', 'photograph', 'knife', 'diary'}:
             print('Congratulations, you solved the murder mystery and caught the villain!')
             break
 
