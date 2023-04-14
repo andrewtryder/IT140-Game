@@ -145,7 +145,6 @@ secret_passage.add_item("key")
 
 def mainloop():  # pragma: no cover
     """This is the main game loop. It will run until the player wins or loses the game."""
-    
     # Set the starting room and initialize the game state
     current_room = start_room
     inventory = []
