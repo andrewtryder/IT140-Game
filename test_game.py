@@ -4,8 +4,8 @@ import unittest
 from unittest.mock import patch
 from io import StringIO
 from TextBasedGame import Room
-
 # pylint: disable=C0301, C0103, W0612, W0613
+
 
 class TestRoom(unittest.TestCase):
     """
