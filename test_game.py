@@ -9,9 +9,9 @@ from TextBasedGame import Room
 
 class TestRoom(unittest.TestCase):
     """
-    
     Unit tests for Room class
     """
+
     def setUp(self):
         self.start_room = Room("Start Room", "You are standing in a dusty old room. There is one door to the east.")
         self.foyer = Room("Foyer", "You're in a nice enterance hall.")
@@ -21,16 +21,14 @@ class TestRoom(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
     @patch('builtins.input', side_effect=['go east'])
     def test_move(self, _, mock_output):
-        """Tests that the player can move to a room that exists
-        """
+        """Tests that the player can move to a room that exists."""
         self.start_room.move('east')
         self.assertIn(mock_output.getvalue().strip(), "You move east to Foyer.")
 
     @patch('sys.stdout', new_callable=StringIO)
     @patch('builtins.input', side_effect=['north'])
     def test_move_no_exit(self, _, mock_output):
-        """Tests that the player cannot move to a room that does not exist
-        """
+        """Tests that the player cannot move to a room that does not exist."""
         next_room = self.start_room.move('go north')
         self.assertIsNone(next_room)
         self.assertIn(mock_output.getvalue().strip(), "There is no exit in that direction.")
