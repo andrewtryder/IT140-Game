@@ -20,7 +20,7 @@ class TestRoom(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     @patch('builtins.input', side_effect=['go east'])
-    def test_move(self, mock_input, mock_output):
+    def test_move(self, _, mock_output):
         """Tests that the player can move to a room that exists
         """
         self.start_room.move('east')
@@ -28,7 +28,7 @@ class TestRoom(unittest.TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     @patch('builtins.input', side_effect=['north'])
-    def test_move_no_exit(self, mock_input, mock_output):
+    def test_move_no_exit(self, _, mock_output):
         """Tests that the player cannot move to a room that does not exist
         """
         next_room = self.start_room.move('go north')
