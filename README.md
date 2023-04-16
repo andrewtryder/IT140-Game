@@ -5,5 +5,4 @@
 Text-based Python game for IT140 @ SNHU.
 
 I've never developed a game before. Part of our major milestone project is to create one, 
-so I used the opportunity to play around with OOP and learn a bit more about concepts
-in Python like testing and linting.
+so I used the opportunity to play around with OOP and utilize some modern platforms to help with CI/CD.
