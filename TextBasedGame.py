@@ -103,13 +103,13 @@ class Room:
 
 # Create room objects
 start_room = Room("Start Room", "You are standing in a dusty old room. There is one door to the east.")
-foyer = Room("Foyer", "You're in a nice enterance hall.")
+foyer = Room("Foyer", "You're in a nice enterance hall. Strangely, there is a knife on the table.")
 main_hall = Room("Main Hall", "You enter the main hall with doors in every direction.")
-library = Room("Library", "You enter a room filled with books. There are shelves lining the walls and a fireplace on the north wall.")
-study = Room("Study", "You enter a small room with a desk and a bookshelf. The walls are lined with portraits.")
-ballroom = Room("Ballroom", "You enter a grand ballroom with a chandelier hanging from the ceiling. The walls are lined with mirrors.")
-kitchen = Room("Kitchen", "You enter a room with a stove, sink, and cabinets. There is a pile of dirty dishes in the sink.")
-secret_passage = Room("Secret Passage", "You enter a hidden passage. It's dark and you can't see very far ahead.")
+library = Room("Library", "You enter a room filled with books. There are shelves lining the walls a note laying on a shelf.")
+study = Room("Study", "You enter a small room with a desk and a bookshelf. The walls are lined with portraits and photographs.")
+ballroom = Room("Ballroom", "You enter a grand ballroom with a chandelier hanging from the ceiling. There is a diary placed on a chair.")
+kitchen = Room("Kitchen", "You enter a room with a stove, sink, and cabinets. There is a flashlight located next to the stove.")
+secret_passage = Room("Secret Passage", "You enter a hidden passage. It's dark and you stumble on a key on the floor.")
 villain_room = Room("Villain's Room", "You enter a room with a large bed and a desk. The villain is standing in the corner.")
 
 # Add exits to each room
@@ -148,7 +148,7 @@ def mainloop():  # pragma: no cover
     # Set the starting room and initialize the game state
     current_room = start_room
     inventory = []
-    # our big boy loop for the game.
+    # strange loop.
     while True:
         # Print the current room description and available exits
         print(current_room)
@@ -167,9 +167,7 @@ def mainloop():  # pragma: no cover
         command = input('What do you want to do? ').lower()
 
         # Handle movement commands
-        if command in current_room.exits:
-            current_room = current_room.get_exit(command)
-        elif command.startswith('go '):
+        if command.startswith('go '):
             direction = command.split(' ')[1]
             if direction in current_room.exits:
                 current_room = current_room.get_exit(direction)
